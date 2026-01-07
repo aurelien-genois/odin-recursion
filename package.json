@@ -1,0 +1,24 @@
+{
+  "name": "recursion",
+  "version": "1.0.0",
+  "description": "",
+  "main": "recursionjs",
+  "type": "module",
+  "scripts": {},
+  "keywords": [],
+  "author": "aurelien.genois@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^24.10.4",
+    "@eslint/js": "^9.39.2",
+    "eslint": "^9.39.2",
+    "globals": "^16.5.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.51.0"
+  },
+  "dependencies": {},
+  "prettier": {
+    "singleQuote": false
+  }
+}
