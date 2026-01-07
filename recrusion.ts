@@ -175,3 +175,61 @@ function replicate(nTimes: number, num: number): number[] {
 // replicate(3, 5);
 // replicate(1, 69);
 // replicate(-2, 6);
+
+// ***** Odin Challenges *****
+
+function fibs(n: number): number[] {
+  console.log("This was printed recursively");
+
+  if (n <= 1) {
+    return [0]; // base case
+  } else if (n <= 2) {
+    return [0, 1]; // base case
+  } else {
+    const arr = fibs(n - 1); // -1 until 1 or 2 (base case)
+    return arr.concat([arr[arr.length - 1] + arr[arr.length - 2]]); // recursive case
+  }
+}
+console.log(fibs(1));
+console.log(fibs(2));
+console.log(fibs(5));
+console.log(fibs(8));
+
+function mergeSort(arr: number[]): number[] {
+  console.log("This was printed recursively");
+
+  if (arr.length <= 1) {
+    return arr; // base case
+  } else {
+    // split arr until 1 (base case)
+    const mid = Math.floor(arr.length / 2);
+    let firstHalf = arr.slice(0, mid);
+    firstHalf = mergeSort(firstHalf); // sorted
+    let lastHalf = arr.slice(mid);
+    lastHalf = mergeSort(lastHalf); // sorted
+
+    // recursive case : merge
+    const sortedArr = [];
+    // if both half still having elements
+    while (firstHalf.length && lastHalf.length) {
+      if (firstHalf[0] < lastHalf[0]) {
+        sortedArr.push(firstHalf.shift()); // push and remove firstHalf el
+      } else {
+        sortedArr.push(lastHalf.shift()); // push and remove firstHalf el
+      }
+    }
+
+    return [
+      ...(sortedArr as number[]),
+      ...(firstHalf as number[]),
+      ...(lastHalf as number[]),
+    ]; // merge sorted els with remaining els if any
+  }
+}
+// mergeSort([]);
+console.log(mergeSort([73]));
+console.log(mergeSort([1, 2, 3, 4, 5]));
+console.log(mergeSort([3, 2, 1, 13, 8, 5, 0, 1]));
+console.log(mergeSort([105, 79, 100, 110]));
+
+// > pnpx tsx --watch src/temp-recursion.ts
