@@ -1,6 +1,6 @@
 # odin-recursion
 
-Run `pnpx tsx --watch recursion.ts`<h2 align="center"><a  href="https://aurelien-genois.github.io/odin-dashboard/">Live Demo</a></h2>
+Run `pnpx tsx --watch recursion.ts`
 
 ## Description
 
